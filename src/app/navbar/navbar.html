@@ -1,1 +1,200 @@
-<p>navbar works!</p>
+<header class="fixed top-0 inset-x-0 z-50 bg-white/90 backdrop-blur-xl border-b border-outline-variant/30 shadow-[0_1px_12px_rgba(219,39,119,0.05)]">
+  <div class="h-20 max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-3 xl:gap-6">
+    
+    <!-- Left Section: Brand Monogram & Status Badge -->
+    <div class="flex items-center gap-3 xl:gap-5 shrink-0">
+      <!-- Monogram & Name -->
+      <a routerLink="/" class="flex items-center gap-2.5 shrink-0 group cursor-pointer" title="Priyanka Maroti Portfolio">
+        <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-primary to-secondary flex items-center justify-center text-white font-extrabold text-sm shadow-md group-hover:scale-105 transition-transform">
+          PM
+        </div>
+        <span class="font-bold text-base sm:text-lg text-on-surface tracking-tight whitespace-nowrap group-hover:text-primary transition-colors">
+          Priyanka Maroti
+        </span>
+      </a>
+
+      <!-- Open to Opportunities Pill Badge -->
+      <a
+        routerLink="/contact"
+        class="hidden 2xl:inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary-fixed/70 hover:bg-secondary-fixed text-primary text-xs font-semibold shrink-0 border border-primary/15 shadow-2xs hover:scale-102 transition-all cursor-pointer"
+        title="Available for full-time roles - Contact Me"
+      >
+        <span class="relative flex h-2 w-2">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+        </span>
+        <span class="whitespace-nowrap">Open to Opportunities</span>
+      </a>
+    </div>
+
+    <!-- Center Section: Desktop Navigation Links with Professional Spacing -->
+    <nav class="hidden xl:flex items-center gap-1.5 2xl:gap-2.5 shrink-0">
+      <a
+        routerLink="/"
+        routerLinkActive="bg-primary-container text-white shadow-sm font-semibold"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="px-3 2xl:px-3.5 py-2 rounded-xl text-[13px] 2xl:text-sm font-medium text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all whitespace-nowrap cursor-pointer"
+      >
+        Overview
+      </a>
+
+      <a
+        routerLink="/experience"
+        routerLinkActive="bg-primary-container text-white shadow-sm font-semibold"
+        class="px-3 2xl:px-3.5 py-2 rounded-xl text-[13px] 2xl:text-sm font-medium text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all whitespace-nowrap cursor-pointer"
+      >
+        Experience
+      </a>
+
+      <a
+        routerLink="/projects"
+        routerLinkActive="bg-primary-container text-white shadow-sm font-semibold"
+        class="px-3 2xl:px-3.5 py-2 rounded-xl text-[13px] 2xl:text-sm font-medium text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all whitespace-nowrap cursor-pointer"
+      >
+        Projects
+      </a>
+
+      <a
+        routerLink="/skills"
+        routerLinkActive="bg-primary-container text-white shadow-sm font-semibold"
+        class="px-3 2xl:px-3.5 py-2 rounded-xl text-[13px] 2xl:text-sm font-medium text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all whitespace-nowrap cursor-pointer"
+      >
+        Skills
+      </a>
+
+      <a
+        routerLink="/education"
+        routerLinkActive="bg-primary-container text-white shadow-sm font-semibold"
+        class="px-3 2xl:px-3.5 py-2 rounded-xl text-[13px] 2xl:text-sm font-medium text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all whitespace-nowrap cursor-pointer"
+      >
+        Education
+      </a>
+
+      <a
+        routerLink="/contact"
+        routerLinkActive="bg-primary-container text-white shadow-sm font-semibold"
+        class="px-3 2xl:px-3.5 py-2 rounded-xl text-[13px] 2xl:text-sm font-medium text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all whitespace-nowrap cursor-pointer"
+      >
+        Contact
+      </a>
+    </nav>
+
+    <!-- Right Section: Action Buttons (Resume, Avatar, Mobile Menu Toggle) -->
+    <div class="flex items-center gap-2.5 sm:gap-3.5 shrink-0">
+      <a
+        href="assets/Priyankamaroti_resume.pdf"
+        target="_blank"
+        download="Priyanka_Maroti_Resume.pdf"
+        class="inline-flex items-center gap-1.5 px-3.5 sm:px-4 py-2 bg-gradient-to-r from-primary-container to-secondary text-white text-xs sm:text-sm font-semibold rounded-xl shadow-[0_4px_16px_-2px_rgba(219,39,119,0.3)] hover:shadow-[0_8px_20px_-4px_rgba(219,39,119,0.35)] transition-all hover:-translate-y-0.5 whitespace-nowrap cursor-pointer"
+        title="Download Official Resume PDF"
+      >
+        <span class="material-symbols-outlined text-[18px]">download</span>
+        <span>Resume</span>
+      </a>
+
+      <a routerLink="/" class="flex items-center pl-1 sm:pl-2 border-l border-outline-variant/40 shrink-0 cursor-pointer" title="Priyanka Maroti">
+        <img
+          alt="Priyanka Maroti"
+          class="w-8 h-8 rounded-full object-cover ring-2 ring-secondary-fixed hover:ring-primary transition-all"
+          src="assets/images/priyanka.jpg"
+        />
+      </a>
+
+      <!-- Mobile/Tablet Menu Hamburger Button (visible on < xl) -->
+      <button
+        (click)="isMobileMenuOpen = !isMobileMenuOpen"
+        type="button"
+        aria-label="Toggle navigation menu"
+        class="xl:hidden p-2 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-primary transition cursor-pointer"
+      >
+        <span class="material-symbols-outlined text-2xl">
+          {{ isMobileMenuOpen ? 'close' : 'menu' }}
+        </span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile & Tablet Slide-Down Navigation Drawer -->
+  @if (isMobileMenuOpen) {
+    <div class="xl:hidden border-t border-outline-variant/30 bg-surface-container-lowest px-5 py-5 space-y-2 shadow-xl animate-in fade-in slide-in-from-top-2 duration-200">
+      
+      <!-- Mobile status badge -->
+      <a
+        (click)="isMobileMenuOpen = false"
+        routerLink="/contact"
+        class="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-secondary-fixed/60 text-primary text-xs font-semibold w-fit mb-3 border border-primary/10"
+      >
+        <span class="relative flex h-2 w-2">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+        </span>
+        <span>Open to Opportunities</span>
+      </a>
+
+      <!-- Mobile Navigation Links with spacious tap targets -->
+      <div class="space-y-1">
+        <a
+          (click)="isMobileMenuOpen = false"
+          routerLink="/"
+          routerLinkActive="bg-primary-container text-white font-semibold shadow-xs"
+          [routerLinkActiveOptions]="{ exact: true }"
+          class="flex items-center justify-between px-3.5 py-2.5 rounded-xl text-sm font-medium text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors"
+        >
+          <span>Overview</span>
+          <span class="material-symbols-outlined text-[18px]">chevron_right</span>
+        </a>
+
+        <a
+          (click)="isMobileMenuOpen = false"
+          routerLink="/experience"
+          routerLinkActive="bg-primary-container text-white font-semibold shadow-xs"
+          class="flex items-center justify-between px-3.5 py-2.5 rounded-xl text-sm font-medium text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors"
+        >
+          <span>Experience</span>
+          <span class="material-symbols-outlined text-[18px]">chevron_right</span>
+        </a>
+
+        <a
+          (click)="isMobileMenuOpen = false"
+          routerLink="/projects"
+          routerLinkActive="bg-primary-container text-white font-semibold shadow-xs"
+          class="flex items-center justify-between px-3.5 py-2.5 rounded-xl text-sm font-medium text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors"
+        >
+          <span>Projects</span>
+          <span class="material-symbols-outlined text-[18px]">chevron_right</span>
+        </a>
+
+        <a
+          (click)="isMobileMenuOpen = false"
+          routerLink="/skills"
+          routerLinkActive="bg-primary-container text-white font-semibold shadow-xs"
+          class="flex items-center justify-between px-3.5 py-2.5 rounded-xl text-sm font-medium text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors"
+        >
+          <span>Skills</span>
+          <span class="material-symbols-outlined text-[18px]">chevron_right</span>
+        </a>
+
+        <a
+          (click)="isMobileMenuOpen = false"
+          routerLink="/education"
+          routerLinkActive="bg-primary-container text-white font-semibold shadow-xs"
+          class="flex items-center justify-between px-3.5 py-2.5 rounded-xl text-sm font-medium text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors"
+        >
+          <span>Education</span>
+          <span class="material-symbols-outlined text-[18px]">chevron_right</span>
+        </a>
+
+        <a
+          (click)="isMobileMenuOpen = false"
+          routerLink="/contact"
+          routerLinkActive="bg-primary-container text-white font-semibold shadow-xs"
+          class="flex items-center justify-between px-3.5 py-2.5 rounded-xl text-sm font-medium text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors"
+        >
+          <span>Contact</span>
+          <span class="material-symbols-outlined text-[18px]">chevron_right</span>
+        </a>
+      </div>
+
+    </div>
+  }
+</header>
